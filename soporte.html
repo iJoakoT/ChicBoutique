@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="es">
+<head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Soporte - Chic Boutique</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css"></head>
+<body>
+  <div class="container">
+    <header class="header"><div class="brand"><h1>Soporte</h1><div class="tag">Envíanos un ticket</div></div><nav class="nav"><a href="index.html">Inicio</a></nav></header>
+    <main>
+      <section style="margin-top:12px;">
+        <p>Completa el formulario para crear un ticket de soporte. Se guardará localmente y podrás descargar el ticket o enviarlo por correo.</p>
+        <form id="ticketForm" onsubmit="return submitTicket(event)" style="max-width:720px">
+          <div class="form-group"><label>Nombre</label><input type="text" id="name" required></div>
+          <div class="form-group"><label>Correo</label><input type="email" id="email" required></div>
+          <div class="form-group"><label>Teléfono (opcional)</label><input type="text" id="phone"></div>
+          <div class="form-group"><label>Categoría</label><select id="category"><option>Compra</option><option>Envío</option><option>Producto</option><option>Otro</option></select></div>
+          <div class="form-group"><label>Asunto</label><input type="text" id="subject" required></div>
+          <div class="form-group"><label>Descripción del problema</label><textarea id="description" required></textarea></div>
+          <button type="submit" class="submit">Enviar ticket</button>
+        </form>
+
+        <div id="result" style="margin-top:12px;"></div>
+
+        <h3 style="margin-top:18px">Tickets guardados en este navegador</h3>
+        <div id="ticketsList"></div>
+      </section>
+    </main>
+    <footer><p>Chic Boutique · soporte: contacto@chicboutique.example</p></footer>
+  </div>
+
+  <script>
+    function generateTicketID(){ return 'CB-' + Date.now().toString().slice(-6) + '-' + Math.floor(Math.random()*90+10); }
+
+    function submitTicket(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const category = document.getElementById('category').value;
+      const subject = document.getElementById('subject').value.trim();
+      const description = document.getElementById('description').value.trim();
+
+      const ticketID = generateTicketID();
+      const ticket = { id: ticketID, name: name, email: email, phone: phone, category: category, subject: subject, description: description, date: new Date().toISOString() };
+
+      // Guardar en localStorage
+      const stored = JSON.parse(localStorage.getItem('chic_tickets') || '[]');
+      stored.push(ticket);
+      localStorage.setItem('chic_tickets', JSON.stringify(stored));
+
+      // Mostrar en UI
+      document.getElementById('result').innerHTML = '<div style="background:#fff;padding:12px;border-radius:8px;">Ticket creado: <strong>' + ticketID + '</strong>. Se guardó localmente.</div>';
+      renderTickets();
+      return false;
+    }
+
+    function renderTickets(){
+      const list = document.getElementById('ticketsList');
+      const stored = JSON.parse(localStorage.getItem('chic_tickets') || '[]');
+      if(stored.length === 0){ list.innerHTML = '<p>No hay tickets guardados.</p>'; return; }
+      list.innerHTML = '';
+      stored.slice().reverse().forEach(t => {
+        const div = document.createElement('div'); div.className='ticket';
+        div.innerHTML = '<strong>' + t.id + '</strong> &nbsp; <em>' + (new Date(t.date)).toLocaleString() + '</em><br><strong>Asunto:</strong> ' + t.subject + '<br>'
+          + '<strong>Correo:</strong> ' + t.email + ' &nbsp; <strong>Categoría:</strong> ' + t.category + '<div style="margin-top:8px">'
+          + '<button class="btn" onclick="downloadTicket(\'' + t.id + '\')">Descargar .txt</button> '
+          + '<button class="btn" onclick="openMail(\'' + t.id + '\')">Abrir en correo</button>'
+          + '</div>';
+        list.appendChild(div);
+      });
+    }
+
+    function findTicket(id){
+      const stored = JSON.parse(localStorage.getItem('chic_tickets') || '[]');
+      return stored.find(t=>t.id===id);
+    }
+
+    function downloadTicket(id){
+      const t = findTicket(id);
+      if(!t) return alert('Ticket no encontrado');
+      const txt = 'ID: ' + t.id + '\nFecha: ' + t.date + '\nNombre: ' + t.name + '\nCorreo: ' + t.email + '\nTeléfono: ' + t.phone + '\nCategoría: ' + t.category + '\nAsunto: ' + t.subject + '\n\nDescripción:\n' + t.description;
+      const blob = new Blob([txt], {type:'text/plain'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url; a.download = t.id + '.txt'; document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
+    }
+
+    function openMail(id){
+      const t = findTicket(id);
+      if(!t) return alert('Ticket no encontrado');
+      const to = 'contacto@chicboutique.example';
+      const mailSubject = encodeURIComponent('Ticket ' + t.id + ': ' + t.subject);
+      const body = encodeURIComponent('ID: ' + t.id + '\nNombre: ' + t.name + '\nCorreo: ' + t.email + '\nTeléfono: ' + t.phone + '\nCategoría: ' + t.category + '\n\nDescripción:\n' + t.description);
+      window.location.href = 'mailto:' + to + '?subject=' + mailSubject + '&body=' + body;
+    }
+
+    document.addEventListener('DOMContentLoaded', renderTickets);
+  </script>
+</body>
+</html>

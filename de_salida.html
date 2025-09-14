@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="es">
+<head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>De salida - Chic Boutique</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css"></head>
+<body>
+  <div class="container">
+    <header class="header"><div class="brand"><h1>Chic Boutique</h1><div class="tag">Categoría: De salida</div></div><nav class="nav"><a href="index.html">Inicio</a><a href="de_mano.html">De mano</a><a href="soporte.html">Soporte</a></nav></header>
+    <main>
+      <section class="product-hero">
+        <img src="de_salida.png" alt="De salida">
+        <div class="product-info">
+          <h2>Cartera "De salida" — Hilfiger</h2>
+          <div class="price">S/ 329</div>
+          <p class="details">Diseño sofisticado con herrajes dorados, ideal para eventos.</p>
+          <p><strong>Disponibilidad:</strong> En stock</p>
+          <p><a class="btn" href="contacto.html">Consultar disponibilidad</a></p>
+          <div style="margin-top:12px;"><button class="btn" onclick="openModal('de_salida.png','Cartera De salida - detalles')">Ver galería</button></div>
+        </div>
+      </section>
+
+      <section style="margin-top:12px">
+        <h3>Material y cuidado</h3>
+        <table>
+          <tr><th>Material</th><th>Recomendación</th></tr>
+          <tr><td>Piel sintética premium</td><td>Limpieza con paño húmedo</td></tr>
+          <tr><td>Herrajes</td><td>Evitar contacto con agua</td></tr>
+        </table>
+      </section>
+    </main>
+
+    <footer><p>&copy; Chic Boutique</p></footer>
+  </div>
+
+  <!-- Modal -->
+  <div id="modalBackdrop" class="modal-backdrop" onclick="closeModal()">
+    <div class="modal" onclick="event.stopPropagation()">
+      <div id="modalContent"></div>
+      <div style="text-align:right;margin-top:12px"><button class="btn" onclick="closeModal()">Cerrar</button></div>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>

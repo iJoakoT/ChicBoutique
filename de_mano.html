@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="es">
+<head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>De mano - Chic Boutique</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css"></head>
+<body>
+  <div class="container">
+    <header class="header"><div class="brand"><h1>Chic Boutique</h1><div class="tag">Categoría: De mano</div></div><nav class="nav"><a href="index.html">Inicio</a><a href="de_salida.html">De salida</a><a href="soporte.html">Soporte</a></nav></header>
+    <main>
+      <section class="product-hero">
+        <img src="de_mano.png" alt="De mano">
+        <div class="product-info">
+          <h2>Cartera "De mano" — Tommy</h2>
+          <div class="price">S/ 249</div>
+          <p class="details">Cartera compacta con correa desmontable. Ideal para usar a diario.</p>
+          <p><strong>Disponibilidad:</strong> En stock</p>
+          <p><a class="btn" href="contacto.html">Consultar disponibilidad</a></p>
+          <div style="margin-top:12px;"><button class="btn" onclick="openModal('de_mano.png','Cartera De mano - detalles')">Ver galería</button></div>
+        </div>
+      </section>
+
+      <section style="margin-top:12px">
+        <h3>Tabla de tallas / dimensiones</h3>
+        <table>
+          <tr><th>Dimensión</th><th>Medida</th></tr>
+          <tr><td>Ancho</td><td>24 cm</td></tr>
+          <tr><td>Alto</td><td>14 cm</td></tr>
+          <tr><td>Profundidad</td><td>6 cm</td></tr>
+        </table>
+      </section>
+    </main>
+
+    <footer><p>&copy; Chic Boutique</p></footer>
+  </div>
+
+  <!-- Modal -->
+  <div id="modalBackdrop" class="modal-backdrop" onclick="closeModal()">
+    <div class="modal" onclick="event.stopPropagation()">
+      <div id="modalContent"></div>
+      <div style="text-align:right;margin-top:12px"><button class="btn" onclick="closeModal()">Cerrar</button></div>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>

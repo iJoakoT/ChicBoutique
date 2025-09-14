@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="es">
+<head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Contacto - Chic Boutique</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css"></head>
+<body>
+  <div class="container">
+    <header class="header"><div class="brand"><h1>Contacto</h1><div class="tag">Conéctate con nosotros</div></div><nav class="nav"><a href="index.html">Inicio</a></nav></header>
+    <main>
+      <section style="margin-top:12px;text-align:center">
+        <p>Visita nuestro Linktree para encontrar todas nuestras redes y contacto:</p>
+        <p><a class="btn" href="https://linktr.ee/Chicboutique.23" target="_blank">Ir a Linktree</a></p>
+        <p style="margin-top:12px">También puedes enviar mensaje rápido:</p>
+        <form onsubmit="return quickContact(event)" style="max-width:520px;margin:0 auto;text-align:left;">
+          <div class="form-group"><label>Nombre</label><input type="text" id="qname" required></div>
+          <div class="form-group"><label>Correo</label><input type="email" id="qemail" required></div>
+          <div class="form-group"><label>Mensaje</label><textarea id="qmsg" required></textarea></div>
+          <button class="submit" type="submit">Enviar</button>
+        </form>
+        <div id="qres" style="margin-top:12px;"></div>
+      </section>
+    </main>
+    <footer><p>Chic Boutique</p></footer>
+  </div>
+
+  <script>
+    function quickContact(e){
+      e.preventDefault();
+      const name = document.getElementById('qname').value.trim();
+      const email = document.getElementById('qemail').value.trim();
+      const msg = document.getElementById('qmsg').value.trim();
+      const to = 'contacto@chicboutique.example';
+      const subject = encodeURIComponent('Consulta de ' + name);
+      const body = encodeURIComponent('Nombre: ' + name + '\nCorreo: ' + email + '\n\n' + msg);
+      window.location.href = 'mailto:' + to + '?subject=' + subject + '&body=' + body;
+      document.getElementById('qres').innerText = 'Se generó un correo para enviar tu mensaje. Si no abre tu cliente, copia y pega el correo: contacto@chicboutique.example';
+      return false;
+    }
+  </script>
+</body>
+</html>
