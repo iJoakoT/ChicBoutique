@@ -1,4 +1,4 @@
-
+//<!-- actualización diaria 9/26/2025 -->
 // main.js - animaciones y modal para galería
 document.addEventListener('DOMContentLoaded', ()=>{
   // animate cards on load (stagger)
