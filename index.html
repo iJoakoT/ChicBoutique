@@ -1,4 +1,4 @@
-<!-- actualización diaria 10/18/2025 -->
+<!-- actualización diaria 10/19/2025 -->
 <!doctype html>
 <html lang="es">
 <head>
@@ -8,75 +8,83 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
+  <canvas id="particles-canvas" aria-hidden="true"></canvas>
   <div class="container">
-    <header class="header">
-      <div class="brand">
-        <h1>Chic Boutique</h1>
-        <div class="tag">Elegancia en cada detalle — Carteras artesanales y contemporáneas</div>
+
+  <header class="header">
+    <div class="brand">
+      <h1>Chic Boutique</h1>
+      <div class="tag">Elegancia en cada detalle — Carteras artesanales</div>
+    </div>
+    <nav class="nav" role="navigation" aria-label="Principal">
+      <button class="nav-btn" data-target="index.html">Inicio</button>
+      <button class="nav-btn" data-target="de_mano.html">De mano</button>
+      <button class="nav-btn" data-target="de_salida.html">De salida</button>
+      <button class="nav-btn" data-target="soporte.html">Soporte</button>
+      <button class="nav-btn" data-target="contacto.html">Contacto</button>
+      <button class="nav-btn social" onclick="window.open('https://linktr.ee/Chicboutique.23','_blank')">Redes sociales</button>
+      <button class="nav-toggle" aria-expanded="false" aria-label="Abrir menú">☰</button>
+    </nav>
+  </header>
+
+<main>
+  <section class="hero">
+    <div class="welcome-card" role="region" aria-labelledby="welcome-title">
+      <h2 id="welcome-title">Bienvenida</h2>
+      <p class="lead">Chic Boutique ofrece carteras de diseño atemporal y confección artesanal. Materiales seleccionados, costura precisa y acabados premium.</p>
+      <ul class="features">
+        <li>Envíos nacionales: 24–48 horas (Metropolitana) / 48–72 horas (Provincia)</li>
+        <li>Métodos de pago: tarjeta y transferencia bancaria</li>
+        <li>Política de devoluciones: 7 días desde la recepción</li>
+      </ul>
+      <a class="cta" href="de_mano.html">Explora la colección</a>
+    </div>
+
+    <div style="flex:1;display:flex;flex-direction:column;gap:12px;">
+      <div style="border-radius:12px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,0.08)">
+        <!-- YouTube embed (replace VIDEO_ID) -->
+        <div style="position:relative;padding-top:56.25%">
+          <iframe src="https://www.youtube.com/embed/27_rJSE6DfY" style="position:absolute;inset:0;width:100%;height:100%;border:0" title="YouTube video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
       </div>
-      <nav class="nav">
-        <a href="index.html">Inicio</a>
-        <a href="de_mano.html">De mano</a>
-        <a href="de_salida.html">De salida</a>
-        <a href="soporte.html">Soporte</a>
-        <a href="contacto.html">Contacto</a>
-      </nav>
-    </header>
-
-    <main>
-      <section class="intro">
-        <h2>Bienvenida</h2>
-        <p>Chic Boutique ofrece carteras de diseño atemporal y fabricación cuidada. Materiales seleccionados, costura precisa y acabados premium. Envíos nacionales en 48 horas. Pagos con tarjeta y transferencia. Devolución en 7 días.</p>
-
-        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:12px;align-items:center;justify-content:center;">
-          <!-- TikTok embed -->
-          <div style="max-width:560px;width:100%;">
-            <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@chicboutique.23/video/7300323051361553670" data-video-id="7300323051361553670" style="max-width: 560px;min-width: 325px;">
-              <section>Ver video</section>
-            </blockquote>
-            <script async src="https://www.tiktok.com/embed.js"></script>
-          </div>
-
-          <!-- YouTube fallback (el video original) -->
-          <div style="max-width:420px;width:100%;">
-            <iframe width="420" height="236" src="https://www.youtube.com/embed/27_rJSE6DfY" title="Video ejemplo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          </div>
+      <div style="border-radius:12px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,0.06)">
+        <!-- TikTok embed placeholder -->
+        <div style="padding:12px;background:white;">
+          <blockquote style="margin:0;padding:0"><a href="https://www.tiktok.com/@chicboutique.23?_t=8hmtkw7qeb4&_r=1" target="_blank" rel="noopener"><a class="cta"> ¡Puedes visitar tambien nuestro TIKTOK para más! - ¡Click Aquí!</a></a></blockquote>
         </div>
-      </section>
+      </div>
+    </div>
+  </section>
 
-      <section class="catalogo" style="margin-top:16px;">
-        <h2>Catálogo — categorías</h2>
-        <div class="grid-preview">
-          <div class="card" data-cat="demano" onclick="openCategory('de_mano.html')">
-            <img src="de_mano.png" alt="De mano">
-            <h3>De mano</h3>
-            <p>Perfectas para uso diario, combinan estilo y funcionalidad.</p>
-            <button class="btn" onclick="event.stopPropagation();openCategory('de_mano.html')">Ver categoría</button>
-          </div>
-          <div class="card" data-cat="desalida" onclick="openCategory('de_salida.html')">
-            <img src="de_salida.png" alt="De salida">
-            <h3>De salida</h3>
-            <p>Diseños para ocasiones especiales y salidas nocturnas.</p>
-            <button class="btn" onclick="event.stopPropagation();openCategory('de_salida.html')">Ver categoría</button>
-          </div>
-        </div>
+  <section class="cards" aria-label="Productos destacados">
+    <article class="card">
+      <img src="de_mano.png" alt="Cartera de mano destacada">
+      <h4>Cartera Clásica</h4>
+      <p>Diseño atemporal, cuero seleccionado y acabado premium.</p>
+      <button class="btn-gallery" data-gallery="de_mano.png,de_salida.png">Ver galería</button>
+    </article>
+    <article class="card">
+      <img src="de_salida.png" alt="Cartera de salida">
+      <h4>Cartera de salida</h4>
+      <p>Perfecta para eventos y salidas nocturnas.</p>
+      <button class="btn-gallery" data-gallery="de_salida.png,de_mano.png">Ver galería</button>
+    </article>
+    <article class="card">
+      <img src="novedades.png" alt="Pronto nuevas novedades únicas">
+      <h4>Edición limitada</h4>
+      <p>Piezas numeradas, producción limitada.</p>
+      <a class="cta" href="de_mano.html">Ver colección de piezas únicas</a>
+    </article>
+  </section>
 
-        <h3 style="margin-top:18px">Tabla de precios orientativa</h3>
-        <table>
-          <tr><th>Categoría</th><th>Rango</th><th>Envío</th></tr>
-          <tr><td>De mano</td><td>S/ 199 - S/ 359</td><td>S/ 15 (nacional)</td></tr>
-          <tr><td>De salida</td><td>S/ 279 - S/ 399</td><td>S/ 20 (nacional)</td></tr>
-        </table>
+  <section class="info" style="margin-top:18px;">
+    <h3>Testimonios</h3>
+    <p>“Elegancia que perdura” — Clientes satisfechos.</p>
+  </section>
+</main>
 
-        <h3 style="margin-top:14px">Tabla de tiempos de envío</h3>
-        <table>
-          <tr><th>Tipo</th><th>Tiempo estimado</th></tr>
-          <tr><td>Metropolitana</td><td>24-48 horas</td></tr>
-          <tr><td>Provincia</td><td>48-72 horas</td></tr>
-        </table>
-      </section>
-    </main>
 
     <footer style="margin-top:18px">
       <p>Chic Boutique © 2025 · Linktree: <a href="https://linktr.ee/Chicboutique.23" target="_blank">Chicboutique.23</a></p>
@@ -84,5 +92,8 @@
   </div>
 
   <script src="main.js"></script>
+
+</div>
+<script src='main.js'></script>
 </body>
 </html>
