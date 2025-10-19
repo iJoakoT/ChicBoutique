@@ -1,12 +1,33 @@
-<!-- actualización diaria 10/18/2025 -->
+<!-- actualización diaria 10/19/2025 -->
 <!doctype html>
 <html lang="es">
 <head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>De salida - Chic Boutique</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css"></head>
+
 <body>
+  <canvas id="particles-canvas" aria-hidden="true"></canvas>
   <div class="container">
-    <header class="header"><div class="brand"><h1>Chic Boutique</h1><div class="tag">Categoría: De salida</div></div><nav class="nav"><a href="index.html">Inicio</a><a href="de_mano.html">De mano</a><a href="soporte.html">Soporte</a></nav></header>
+
+  <header class="header">
+    <div class="brand">
+      <h1>Chic Boutique</h1>
+      <div class="tag">Elegancia en cada detalle — Carteras artesanales</div>
+    </div>
+    <nav class="nav" role="navigation" aria-label="Principal">
+      <button class="nav-btn" data-target="index.html">Inicio</button>
+      <button class="nav-btn" data-target="de_mano.html">De mano</button>
+      <button class="nav-btn" data-target="de_salida.html">De salida</button>
+      <button class="nav-btn" data-target="soporte.html">Soporte</button>
+      <button class="nav-btn" data-target="contacto.html">Contacto</button>
+      <button class="nav-btn social" onclick="window.open('https://linktr.ee/Chicboutique.23','_blank')">Redes sociales</button>
+      <button class="nav-toggle" aria-expanded="false" aria-label="Abrir menú">☰</button>
+    </nav>
+  </header>
+
+
+  <div class="container">
+    <div class="tag">Categoría: De salida</div></header>
     <main>
       <section class="product-hero">
         <img src="de_salida.png" alt="De salida">
@@ -16,7 +37,7 @@
           <p class="details">Diseño sofisticado con herrajes dorados, ideal para eventos.</p>
           <p><strong>Disponibilidad:</strong> En stock</p>
           <p><a class="btn" href="contacto.html">Consultar disponibilidad</a></p>
-          <div style="margin-top:12px;"><button class="btn" onclick="openModal('de_salida.png','Cartera De salida - detalles')">Ver galería</button></div>
+          <div style="margin-top:12px"><button class="btn-gallery" data-gallery="de_salida.png,de_mano.png">Ver galería</button></div>
         </div>
       </section>
 
@@ -28,7 +49,8 @@
           <tr><td>Herrajes</td><td>Evitar contacto con agua</td></tr>
         </table>
       </section>
-    </main>
+    
+</main>
 
     <footer><p>&copy; Chic Boutique</p></footer>
   </div>
@@ -42,5 +64,8 @@
   </div>
 
   <script src="main.js"></script>
+
+</div>
+<script src='main.js'></script>
 </body>
 </html>
