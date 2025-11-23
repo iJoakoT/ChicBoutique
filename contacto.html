@@ -1,42 +1,97 @@
 <!-- actualización diaria 10/16/2025 -->
 <!doctype html>
 <html lang="es">
-<head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Contacto - Chic Boutique</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css"></head>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contacto · Chic Boutique</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
 <body>
+  <canvas id="particles-canvas" aria-hidden="true"></canvas>
+
   <div class="container">
-    <header class="header"><div class="brand"><h1>Contacto</h1><div class="tag">Conéctate con nosotros</div></div><nav class="nav"><a href="index.html">Inicio</a></nav></header>
-    <main>
-      <section style="margin-top:12px;text-align:center">
-        <p>Visita nuestro Linktree para encontrar todas nuestras redes y contacto:</p>
-        <p><a class="btn" href="https://linktr.ee/Chicboutique.23" target="_blank">Ir a Linktree</a></p>
-        <p style="margin-top:12px">También puedes enviar mensaje rápido:</p>
-        <form onsubmit="return quickContact(event)" style="max-width:520px;margin:0 auto;text-align:left;">
-          <div class="form-group"><label>Nombre</label><input type="text" id="qname" required></div>
-          <div class="form-group"><label>Correo</label><input type="email" id="qemail" required></div>
-          <div class="form-group"><label>Mensaje</label><textarea id="qmsg" required></textarea></div>
-          <button class="submit" type="submit">Enviar</button>
-        </form>
-        <div id="qres" style="margin-top:12px;"></div>
+
+    <header class="header">
+      <a href="index.html" class="brand-home">
+        <h1>Chic Boutique</h1>
+        <div class="tag">Conéctate con nosotros</div>
+      </a>
+      <nav class="nav" role="navigation" aria-label="Principal">
+        <button class="nav-btn" data-target="index.html">Inicio</button>
+        <button class="nav-btn" data-target="de_mano.html">De mano</button>
+        <button class="nav-btn" data-target="de_salida.html">De salida</button>
+        <button class="nav-btn" data-target="soporte.html">Soporte</button>
+        <button class="nav-btn" data-target="contacto.html">Contacto</button>
+        <button class="nav-btn social" onclick="window.open('https://linktr.ee/Chicboutique.23','_blank')">Redes sociales</button>
+        <button class="nav-toggle" aria-expanded="false" aria-label="Abrir menú">☰</button>
+      </nav>
+    </header>
+
+    <main class="contact-main">
+      <section class="contact-column">
+        <h2 class="page-title">Contacto</h2>
+        <p class="page-subtitle">
+          Si tienes dudas sobre un pedido, colaboraciones o cualquier consulta,
+          estamos atentos para ayudarte.
+        </p>
+
+        <div class="contact-card">
+          <h3>Nuestras redes</h3>
+          <p>Visita nuestro Linktree para encontrar todas nuestras redes sociales y medios de contacto:</p>
+          <p style="margin-top:10px;">
+            <button class="btn" type="button"
+                    onclick="window.open('https://linktr.ee/Chicboutique.23','_blank')">
+              Ir a Linktree
+            </button>
+          </p>
+          <p style="margin-top:10px;">
+            También puedes escribirnos directamente al correo:<br>
+            <strong>contacto@chicboutique.example</strong>
+          </p>
+        </div>
+      </section>
+
+      <section class="contact-column contact-column-form" aria-label="Mensaje rápido">
+        <div class="contact-card">
+          <h3>Envíanos un mensaje rápido</h3>
+          <p style="margin:0 0 10px 0;">
+            Déjanos tus datos y un breve mensaje. Te responderemos en un plazo de
+            <strong>24 a 48 horas hábiles</strong>.
+          </p>
+
+          <form class="contact-form" onsubmit="return quickContact(event)">
+            <div class="contact-field">
+              <label for="qname">Nombre</label>
+              <input id="qname" type="text" required placeholder="Tu nombre completo" />
+            </div>
+
+            <div class="contact-field">
+              <label for="qemail">Correo electrónico</label>
+              <input id="qemail" type="email" required placeholder="tucorreo@example.com" />
+            </div>
+
+            <div class="contact-field">
+              <label for="qmsg">Mensaje</label>
+              <textarea id="qmsg" rows="4" required
+                        placeholder="Cuéntanos en qué podemos ayudarte"></textarea>
+            </div>
+
+            <button type="submit" class="contact-submit">
+              Enviar mensaje
+            </button>
+          </form>
+        </div>
       </section>
     </main>
-    <footer><p>Chic Boutique</p></footer>
+
+    <footer style="margin-top:18px">
+      <p>Chic Boutique © 2025 · Linktree: <a href="https://linktr.ee/Chicboutique.23" target="_blank">Chicboutique.23</a></p>
+    </footer>
   </div>
 
-  <script>
-    function quickContact(e){
-      e.preventDefault();
-      const name = document.getElementById('qname').value.trim();
-      const email = document.getElementById('qemail').value.trim();
-      const msg = document.getElementById('qmsg').value.trim();
-      const to = 'contacto@chicboutique.example';
-      const subject = encodeURIComponent('Consulta de ' + name);
-      const body = encodeURIComponent('Nombre: ' + name + '\nCorreo: ' + email + '\n\n' + msg);
-      window.location.href = 'mailto:' + to + '?subject=' + subject + '&body=' + body;
-      document.getElementById('qres').innerText = 'Se generó un correo para enviar tu mensaje. Si no abre tu cliente, copia y pega el correo: contacto@chicboutique.example';
-      return false;
-    }
-  </script>
+  <script src="main.js"></script>
 </body>
 </html>
