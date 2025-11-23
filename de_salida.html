@@ -1,71 +1,311 @@
 <!-- actualización diaria 10/25/2025 -->
 <!doctype html>
 <html lang="es">
-<head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>De salida - Chic Boutique</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css"></head>
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>De salida - Chic Boutique</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
 
 <body>
-  <canvas id="particles-canvas" aria-hidden="true"></canvas>
   <div class="container">
 
-  <header class="header">
-    <div class="brand">
-      <h1>Chic Boutique</h1>
-      <div class="tag">Elegancia en cada detalle — Carteras artesanales</div>
-    </div>
-    <nav class="nav" role="navigation" aria-label="Principal">
-      <button class="nav-btn" data-target="index.html">Inicio</button>
-      <button class="nav-btn" data-target="de_mano.html">De mano</button>
-      <button class="nav-btn" data-target="de_salida.html">De salida</button>
-      <button class="nav-btn" data-target="soporte.html">Soporte</button>
-      <button class="nav-btn" data-target="contacto.html">Contacto</button>
-      <button class="nav-btn social" onclick="window.open('https://linktr.ee/Chicboutique.23','_blank')">Redes sociales</button>
-      <button class="nav-toggle" aria-expanded="false" aria-label="Abrir menú">☰</button>
-    </nav>
-  </header>
+    <!-- HEADER -->
+    <header class="header">
+      <a href="index.html" class="brand-home">
+        <h1>Chic Boutique</h1>
+        <div class="tag">Elegancia en cada detalle — Carteras artesanales</div>
+      </a>
+      <nav class="nav" role="navigation" aria-label="Principal">
+        <button class="nav-btn" data-target="index.html">Inicio</button>
+        <button class="nav-btn" data-target="de_mano.html">De mano</button>
+        <button class="nav-btn" data-target="de_salida.html">De salida</button>
+        <button class="nav-btn" data-target="soporte.html">Soporte</button>
+        <button class="nav-btn" data-target="contacto.html">Contacto</button>
+        <button class="nav-btn social" onclick="window.open('https://linktr.ee/Chicboutique.23','_blank')">Redes sociales</button>
+        <button class="nav-toggle" aria-expanded="false" aria-label="Abrir menú">☰</button>
+      </nav>
+    </header>
 
+    <div class="tag">Categoría: De salida</div>
 
-  <div class="container">
-    <div class="tag">Categoría: De salida</div></header>
     <main>
-      <section class="product-hero">
-        <img src="de_salida.png" alt="De salida">
-        <div class="product-info">
-          <h2>Cartera "De salida" — Hilfiger</h2>
-          <div class="price">S/ 329</div>
-          <p class="details">Diseño sofisticado con herrajes dorados, ideal para eventos.</p>
-          <p><strong>Disponibilidad:</strong> En stock</p>
-          <p><a class="btn" href="contacto.html">Consultar disponibilidad</a></p>
-          <div style="margin-top:12px"><button class="btn-gallery" data-gallery="de_salida.png,de_mano.png">Ver galería</button></div>
+      <!--Intro-->
+      <section class="category-intro reveal">
+        <h2>Carteras de salida Chic Boutique</h2>
+        <p>
+          Diseños pensados para tus noches especiales: cenas, eventos, reuniones elegantes
+          y momentos en los que quieres destacar. Elige tu modelo favorito y simula tu pedido.
+        </p>
+        <ul class="category-highlights">
+          <li>Modelos Hilfiger &amp; Tommy para ocasiones especiales.</li>
+          <li>Detalles en herrajes dorados y acabados de lujo.</li>
+          <li>Capacidad perfecta para lo esencial: celular, llaves, labial y más.</li>
+        </ul>
+      </section>
+
+      <!-- Cadena -->
+      <section class="product-strip" aria-label="Más carteras de salida">
+        <h3>Explora más carteras de salida</h3>
+        <p class="product-strip-subtitle">
+          Ejemplos de modelos ideales para eventos, cenas y salidas nocturnas.
+          Haz clic en cada tarjeta para ver más detalles y añadirla a tu carrito.
+        </p>
+
+        <div class="product-strip-track">
+
+          <!-- 1 -->
+          <article class="product-strip-card reveal"
+                   data-name="Hilfiger noche dorada 1"
+                   data-price="329"
+                   data-image="de_salida.png">
+            <img src="de_salida.png" alt="Cartera de salida ejemplo 1">
+            <h4>Hilfiger noche dorada 1</h4>
+            <ul class="product-strip-stats">
+              <li>Herrajes dorados brillantes</li>
+              <li>Ideal para cenas elegantes</li>
+              <li>Envío: 24–48h Lima</li>
+            </ul>
+            <button class="btn add-to-cart"
+                    data-name="Hilfiger noche dorada 1"
+                    data-price="329"
+                    data-image="de_salida.png">
+              Agregar al carrito
+            </button>
+          </article>
+
+          <!-- 2 -->
+          <article class="product-strip-card reveal"
+                   data-name="Hilfiger noche dorada 2"
+                   data-price="329"
+                   data-image="de_salida.png">
+            <img src="de_salida.png" alt="Cartera de salida ejemplo 2">
+            <h4>Hilfiger noche dorada 2</h4>
+            <ul class="product-strip-stats">
+              <li>Correa ajustable y desmontable</li>
+              <li>Acabado satinando</li>
+              <li>Garantía: 3 meses</li>
+            </ul>
+            <button class="btn add-to-cart"
+                    data-name="Hilfiger noche dorada 2"
+                    data-price="329"
+                    data-image="de_salida.png">
+              Agregar al carrito
+            </button>
+          </article>
+
+          <!-- 3 -->
+          <article class="product-strip-card reveal"
+                   data-name="Hilfiger noche dorada 3"
+                   data-price="329"
+                   data-image="de_salida.png">
+            <img src="de_salida.png" alt="Cartera de salida ejemplo 3">
+            <h4>Hilfiger noche dorada 3</h4>
+            <ul class="product-strip-stats">
+              <li>Estilo clutch con cadena</li>
+              <li>Cierre magnético</li>
+              <li>Interior forrado</li>
+            </ul>
+            <button class="btn add-to-cart"
+                    data-name="Hilfiger noche dorada 3"
+                    data-price="329"
+                    data-image="de_salida.png">
+              Agregar al carrito
+            </button>
+          </article>
+
+          <!-- 4 -->
+          <article class="product-strip-card reveal"
+                   data-name="Hilfiger noche dorada 4"
+                   data-price="329"
+                   data-image="de_salida.png">
+            <img src="de_salida.png" alt="Cartera de salida ejemplo 4">
+            <h4>Hilfiger noche dorada 4</h4>
+            <ul class="product-strip-stats">
+              <li>Perfecta para eventos formales</li>
+              <li>Incluye bolsillo interno</li>
+              <li>Producto importado</li>
+            </ul>
+            <button class="btn add-to-cart"
+                    data-name="Hilfiger noche dorada 4"
+                    data-price="329"
+                    data-image="de_salida.png">
+              Agregar al carrito
+            </button>
+          </article>
+
+          <!-- 5 -->
+          <article class="product-strip-card reveal"
+                   data-name="Hilfiger noche dorada 5"
+                   data-price="329"
+                   data-image="de_salida.png">
+            <img src="de_salida.png" alt="Cartera de salida ejemplo 5">
+            <h4>Hilfiger noche dorada 5</h4>
+            <ul class="product-strip-stats">
+              <li>Medidas: 26 × 16 × 7 cm</li>
+              <li>Acabado semi-brillante</li>
+              <li>Stock limitado</li>
+            </ul>
+            <button class="btn add-to-cart"
+                    data-name="Hilfiger noche dorada 5"
+                    data-price="329"
+                    data-image="de_salida.png">
+              Agregar al carrito
+            </button>
+          </article>
+
+          <!-- 6 -->
+          <article class="product-strip-card reveal"
+                   data-name="Hilfiger noche dorada 6"
+                   data-price="329"
+                   data-image="de_salida.png">
+            <img src="de_salida.png" alt="Cartera de salida ejemplo 6">
+            <h4>Hilfiger noche dorada 6</h4>
+            <ul class="product-strip-stats">
+              <li>Costuras reforzadas</li>
+              <li>Compartimentos internos</li>
+              <li>Uso: eventos & cocteles</li>
+            </ul>
+            <button class="btn add-to-cart"
+                    data-name="Hilfiger noche dorada 6"
+                    data-price="329"
+                    data-image="de_salida.png">
+              Agregar al carrito
+            </button>
+          </article>
+
+          <!-- 7 -->
+          <article class="product-strip-card reveal"
+                   data-name="Hilfiger noche dorada 7"
+                   data-price="329"
+                   data-image="de_salida.png">
+            <img src="de_salida.png" alt="Cartera de salida ejemplo 7">
+            <h4>Hilfiger noche dorada 7</h4>
+            <ul class="product-strip-stats">
+              <li>Detalle metálico frontal</li>
+              <li>Ideal para regalos</li>
+              <li>Incluye etiqueta original</li>
+            </ul>
+            <button class="btn add-to-cart"
+                    data-name="Hilfiger noche dorada 7"
+                    data-price="329"
+                    data-image="de_salida.png">
+              Agregar al carrito
+            </button>
+          </article>
+
+          <!-- 8 -->
+          <article class="product-strip-card reveal"
+                   data-name="Hilfiger noche dorada 8"
+                   data-price="329"
+                   data-image="de_salida.png">
+            <img src="de_salida.png" alt="Cartera de salida ejemplo 8">
+            <h4>Hilfiger noche dorada 8</h4>
+            <ul class="product-strip-stats">
+              <li>Fácil de combinar</li>
+              <li>No se deforma fácilmente</li>
+              <li>Apta para cenas & salidas</li>
+            </ul>
+            <button class="btn add-to-cart"
+                    data-name="Hilfiger noche dorada 8"
+                    data-price="329"
+                    data-image="de_salida.png">
+              Agregar al carrito
+            </button>
+          </article>
+
+          <!-- 9 -->
+          <article class="product-strip-card reveal"
+                   data-name="Hilfiger noche dorada 9"
+                   data-price="329"
+                   data-image="de_salida.png">
+            <img src="de_salida.png" alt="Cartera de salida ejemplo 9">
+            <h4>Hilfiger noche dorada 9</h4>
+            <ul class="product-strip-stats">
+              <li>Cadena metálica removible</li>
+              <li>Detalles dorados</li>
+              <li>Importado de USA</li>
+            </ul>
+            <button class="btn add-to-cart"
+                    data-name="Hilfiger noche dorada 9"
+                    data-price="329"
+                    data-image="de_salida.png">
+              Agregar al carrito
+            </button>
+          </article>
+
+          <!-- 10 -->
+          <article class="product-strip-card reveal"
+                   data-name="Hilfiger noche dorada 10"
+                   data-price="329"
+                   data-image="de_salida.png">
+            <img src="de_salida.png" alt="Cartera de salida ejemplo 10">
+            <h4>Hilfiger noche dorada 10</h4>
+            <ul class="product-strip-stats">
+              <li>Uso recomendado: eventos</li>
+              <li>Peso ligero</li>
+              <li>Edición limitada Chic Boutique</li>
+            </ul>
+            <button class="btn add-to-cart"
+                    data-name="Hilfiger noche dorada 10"
+                    data-price="329"
+                    data-image="de_salida.png">
+              Agregar al carrito
+            </button>
+          </article>
         </div>
       </section>
+    </main>
 
-      <section style="margin-top:12px">
-        <h3>Material y cuidado</h3>
-        <table>
-          <tr><th>Material</th><th>Recomendación</th></tr>
-          <tr><td>Piel sintética premium</td><td>Limpieza con paño húmedo</td></tr>
-          <tr><td>Herrajes</td><td>Evitar contacto con agua</td></tr>
-        </table>
-      </section>
-    
-</main>
-
-    <footer><p>&copy; Chic Boutique</p></footer>
+    <footer>
+      <p>&copy; Chic Boutique</p>
+    </footer>
   </div>
 
-  <!-- Modal -->
+  <!-- MODAL REUTILIZADO PARA GALERÍA Y DETALLE DE PRODUCTO -->
   <div id="modalBackdrop" class="modal-backdrop" onclick="closeModal()">
     <div class="modal" onclick="event.stopPropagation()">
       <div id="modalContent"></div>
-      <div style="text-align:right;margin-top:12px"><button class="btn" onclick="closeModal()">Cerrar</button></div>
+      <div style="text-align:right;margin-top:12px">
+        <button class="btn" onclick="closeModal()">Cerrar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- CARRITO -->
+  <div class="cart-toggle" onclick="toggleCart()">
+    🛒 Carrito
+    <span id="cart-count">0</span>
+  </div>
+
+  <div id="cart-panel" class="cart-panel">
+    <div class="cart-header">
+      <strong>Tu carrito</strong>
+      <button class="cart-item-remove" onclick="toggleCart()">×</button>
+    </div>
+    <div id="cart-items" class="cart-items"></div>
+    <div class="cart-footer">
+      <div><strong>Total:</strong> S/ <span id="cart-total">0.00</span></div>
+
+      <div class="cart-methods">
+        <div>Métodos de pago simulados:</div>
+        <ul>
+          <li>Yape / Plin</li>
+          <li>Transferencia bancaria (BCP, Interbank)</li>
+          <li>Tarjeta de crédito / débito</li>
+        </ul>
+      </div>
+
+      <button class="btn cart-checkout" onclick="checkout()">Continuar</button>
+      <p class="cart-note">
+        Este carrito es un ejemplo. Al continuar verás el resumen y un mensaje de confirmación
+        como si hubieras realizado tu pedido en Chic Boutique.
+      </p>
     </div>
   </div>
 
   <script src="main.js"></script>
-
-</div>
-<script src='main.js'></script>
 </body>
 </html>
