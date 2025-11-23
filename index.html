@@ -4,96 +4,262 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Chic Boutique</title>
+  <title>Chic Boutique · Carteras y accesorios</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-  <canvas id="particles-canvas" aria-hidden="true"></canvas>
   <div class="container">
 
-  <header class="header">
-    <div class="brand">
-      <h1>Chic Boutique</h1>
-      <div class="tag">Elegancia en cada detalle — Carteras artesanales</div>
-    </div>
-    <nav class="nav" role="navigation" aria-label="Principal">
-      <button class="nav-btn" data-target="index.html">Inicio</button>
-      <button class="nav-btn" data-target="de_mano.html">De mano</button>
-      <button class="nav-btn" data-target="de_salida.html">De salida</button>
-      <button class="nav-btn" data-target="soporte.html">Soporte</button>
-      <button class="nav-btn" data-target="contacto.html">Contacto</button>
-      <button class="nav-btn social" onclick="window.open('https://linktr.ee/Chicboutique.23','_blank')">Redes sociales</button>
-      <button class="nav-toggle" aria-expanded="false" aria-label="Abrir menú">☰</button>
-    </nav>
-  </header>
+    <!-- HEADER / MENÚ -->
+    <header class="header reveal reveal-from-left">
+      <a href="index.html" class="brand-home">
+        <h1>Chic Boutique</h1>
+        <div class="tag">Elegancia en cada detalle — Carteras artesanales</div>
+      </a>
+      <nav class="nav" role="navigation" aria-label="Principal">
+        <button class="nav-btn" data-target="index.html">Inicio</button>
+        <button class="nav-btn" data-target="de_mano.html">De mano</button>
+        <button class="nav-btn" data-target="de_salida.html">De salida</button>
+        <button class="nav-btn" data-target="soporte.html">Soporte</button>
+        <button class="nav-btn" data-target="contacto.html">Contacto</button>
+        <button class="nav-btn social" onclick="window.open('https://linktr.ee/Chicboutique.23','_blank')">Redes sociales</button>
+        <button class="nav-toggle" aria-expanded="false" aria-label="Abrir menú">☰</button>
+      </nav>
+    </header>
 
-<main>
-  <section class="hero">
-    <div class="welcome-card" role="region" aria-labelledby="welcome-title">
-      <h2 id="welcome-title">Bienvenida</h2>
-      <p class="lead">Chic Boutique ofrece carteras de diseño atemporal y confección artesanal. Materiales seleccionados, costura precisa y acabados premium.</p>
-      <ul class="features">
-        <li>Envíos nacionales: 24–48 horas (Metropolitana) / 48–72 horas (Provincia)</li>
-        <li>Métodos de pago: tarjeta y transferencia bancaria</li>
-        <li>Política de devoluciones: 7 días desde la recepción</li>
-      </ul>
-      <a class="cta" href="de_mano.html">Explora la colección</a>
-    </div>
-
-    <div style="flex:1;display:flex;flex-direction:column;gap:12px;">
-      <div style="border-radius:12px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,0.08)">
-        <!-- YouTube embed (replace VIDEO_ID) -->
-        <div style="position:relative;padding-top:56.25%">
-          <iframe src="https://www.youtube.com/embed/27_rJSE6DfY" style="position:absolute;inset:0;width:100%;height:100%;border:0" title="YouTube video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <main>
+      <!-- HERO PROMO + LOGO -->
+      <section class="hero-promo">
+        <div class="hero-left reveal reveal-from-left">
+          <div class="hero-logo">
+            <!-- Guarda tu logo como: logo-chic.png en la misma carpeta que index.html -->
+            <img src="logo-chic.png" alt="Logo Chic Boutique – Carteras y accesorios">
+          </div>
+          <h2>Temporada rosa · -25% en carteras seleccionadas</h2>
+          <p>
+            Descubre carteras importadas inspiradas en tu estilo: desde modelos de mano
+            para el día a día, hasta carteras de salida para tus noches especiales.
+          </p>
+          <div class="hero-actions">
+            <a href="de_mano.html" class="btn hero-btn-main">Ver carteras de mano</a>
+            <a href="de_salida.html" class="btn hero-btn-secondary">Ver carteras de salida</a>
+          </div>
+          <div class="hero-badge">
+            <span>Envíos a todo el Perú</span>
+            <span>Pagos seguros</span>
+            <span>Devoluciones 7 días</span>
+          </div>
         </div>
-      </div>
-      <div style="border-radius:12px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,0.06)">
-        <!-- TikTok embed placeholder -->
-        <div style="padding:12px;background:white;">
-          <blockquote style="margin:0;padding:0"><a href="https://www.tiktok.com/@chicboutique.23?_t=8hmtkw7qeb4&_r=1" target="_blank" rel="noopener"><a class="cta"> ¡Puedes visitar tambien nuestro TIKTOK para más! - ¡Click Aquí!</a></a></blockquote>
+
+        <div class="hero-right reveal reveal-from-right">
+          <div class="promo-card">
+            <div class="promo-tag">Promo destacada</div>
+            <h3>Pack “Girls Night Out”</h3>
+            <p>Combina una cartera de mano + una de salida y obtén <strong>25% de descuento</strong>.</p>
+            <ul>
+              <li>Aplicable a modelos Tommy y Hilfiger.</li>
+              <li>Stock limitado por colores.</li>
+            </ul>
+            <button class="btn add-to-cart"
+                    data-name="Pack Girls Night Out"
+                    data-price="499"
+                    data-image="de_salida.png">
+              Agregar pack al carrito
+            </button>
+          </div>
+
+          <div class="promo-video">
+            <p class="promo-video-title">Mira nuestras carteras en acción</p>
+            <div class="promo-video-frame">
+              <div style="position:relative;padding-top:56.25%">
+                <iframe 
+                    src="https://www.youtube.com/embed/27_rJSE6DfY?rel=0&showinfo=0&modestbranding=1&playsinline=1"
+                    title="Video Chic Boutique"
+                    style="position:absolute;inset:0;width:100%;height:100%;border:0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+              </div>
+            </div>
+            <button class="link-btn" type="button"
+                    onclick="window.open('https://www.tiktok.com/@chicboutique.23?_t=8hmtkw7qeb4&_r=1','_blank')">
+              Ver más en TikTok
+            </button>
+          </div>
         </div>
-      </div>
-    </div>
-  </section>
+      </section>
 
-  <section class="cards" aria-label="Productos destacados">
-    <article class="card">
-      <img src="de_mano.png" alt="Cartera de mano destacada">
-      <h4>Cartera Clásica</h4>
-      <p>Diseño atemporal, cuero seleccionado y acabado premium.</p>
-      <button class="btn-gallery" data-gallery="de_mano.png,de_salida.png">Ver galería</button>
-    </article>
-    <article class="card">
-      <img src="de_salida.png" alt="Cartera de salida">
-      <h4>Cartera de salida</h4>
-      <p>Perfecta para eventos y salidas nocturnas.</p>
-      <button class="btn-gallery" data-gallery="de_salida.png,de_mano.png">Ver galería</button>
-    </article>
-    <article class="card">
-      <img src="novedades.png" alt="Pronto nuevas novedades únicas">
-      <h4>Edición limitada</h4>
-      <p>Piezas numeradas, producción limitada.</p>
-      <a class="cta" href="de_mano.html">Ver colección de piezas únicas</a>
-    </article>
-  </section>
+      <!-- CATEGORÍAS INTERACTIVAS -->
+      <section class="category-section" aria-label="Categorías de carteras">
+        <header class="section-header reveal">
+          <h2>Categorías de carteras</h2>
+          <p>Explora nuestras colecciones según la ocasión.</p>
+        </header>
 
-  <section class="info" style="margin-top:18px;">
-    <h3>Testimonios</h3>
-    <p>“Elegancia que perdura” — Clientes satisfechos.</p>
-  </section>
-</main>
+        <div class="category-grid">
+          <button class="category-card reveal" type="button" onclick="openCategory('de_mano.html')">
+            <div class="category-img" style="background-image:url('de_mano.png')"></div>
+            <h3>De mano</h3>
+            <p>Compactas, versátiles y perfectas para el día a día.</p>
+          </button>
 
+          <button class="category-card reveal" type="button" onclick="openCategory('de_salida.html')">
+            <div class="category-img" style="background-image:url('de_salida.png')"></div>
+            <h3>De salida</h3>
+            <p>Modelos elegantes para tus noches especiales.</p>
+          </button>
+
+          <button class="category-card reveal" type="button" onclick="openCategory('de_salida.html')">
+            <div class="category-img" style="background-image:url('novedades.png')"></div>
+            <h3>Compromisos</h3>
+            <p>Carteras delicadas para eventos formales y celebraciones.</p>
+          </button>
+
+          <button class="category-card reveal" type="button" onclick="openCategory('de_mano.html')">
+            <div class="category-img" style="background-image:url('novedades.png')"></div>
+            <h3>Edición limitada</h3>
+            <p>Piezas numeradas, producción reducida y detalles únicos.</p>
+          </button>
+        </div>
+      </section>
+
+      <!-- PRODUCTOS DESTACADOS -->
+      <section class="cards-section" aria-label="Productos destacados">
+        <header class="section-header reveal">
+          <h2>Destacados de la semana</h2>
+          <p>Algunos de los modelos más elegidos por nuestras clientas.</p>
+        </header>
+
+        <div class="cards">
+          <article class="card reveal">
+            <img src="de_mano.png" alt="Cartera de mano clásica">
+            <h4>Cartera Tommy monograma beige</h4>
+            <p>Diseño atemporal, cuero seleccionado y acabado premium.</p>
+            <button class="btn-gallery" data-gallery="de_mano.png">Ver galería</button>
+            <button class="btn add-to-cart"
+                    data-name="Cartera Tommy monograma beige"
+                    data-price="249"
+                    data-image="de_mano.png">
+              Agregar al carrito
+            </button>
+          </article>
+
+          <article class="card reveal">
+            <img src="de_salida.png" alt="Cartera de salida elegante">
+            <h4>Cartera Hilfiger negra</h4>
+            <p>Perfecta para eventos y salidas nocturnas.</p>
+            <button class="btn-gallery" data-gallery="de_salida.png">Ver galería</button>
+            <button class="btn add-to-cart"
+                    data-name="Cartera Hilfiger negra"
+                    data-price="329"
+                    data-image="de_salida.png">
+              Agregar al carrito
+            </button>
+          </article>
+
+          <article class="card reveal">
+            <img src="novedades.png" alt="Pronto nuevas novedades únicas">
+            <h4>Edición limitada</h4>
+            <p>Piezas numeradas, producción limitada.</p>
+            <a class="cta" href="de_mano.html">Ver colección de piezas únicas</a>
+          </article>
+        </div>
+      </section>
+
+      <!-- TESTIMONIOS -->
+      <section class="testimonials-section" aria-label="Opiniones de clientas">
+        <header class="section-header reveal">
+          <h2>Lo que dicen nuestras clientas</h2>
+          <p>Comentarios ficticios, pero con el cariño real que queremos transmitir.</p>
+        </header>
+
+        <div class="testimonials-track">
+          <article class="testimonial-card reveal">
+            <h3>María F.</h3>
+            <div class="stars">★★★★★</div>
+            <p>“La cartera de mano que compré supera mis expectativas. El material se siente
+              resistente y el diseño es súper combinable.”</p>
+            <span class="badge">Compra verificada · De mano</span>
+          </article>
+
+          <article class="testimonial-card reveal">
+            <h3>Luciana R.</h3>
+            <div class="stars">★★★★☆</div>
+            <p>“Llegó antes de lo esperado y bien protegida. La uso para mis salidas de fin de semana
+              y siempre me preguntan dónde la compré.”</p>
+            <span class="badge">Compra verificada · De salida</span>
+          </article>
+
+          <article class="testimonial-card reveal">
+            <h3>Andrea C.</h3>
+            <div class="stars">★★★★★</div>
+            <p>“Compré una edición limitada para un compromiso y quedó perfecta con mi vestido.
+              Definitivamente volvería a comprar.”</p>
+            <span class="badge">Compra verificada · Edición limitada</span>
+          </article>
+
+          <article class="testimonial-card reveal">
+            <h3>Sofía L.</h3>
+            <div class="stars">★★★★★</div>
+            <p>“Me ayudaron por soporte a elegir el modelo ideal según mi uso diario. Muy buena
+              atención al cliente.”</p>
+            <span class="badge">Atención al cliente</span>
+          </article>
+        </div>
+      </section>
+    </main>
 
     <footer style="margin-top:18px">
-      <p>Chic Boutique © 2025 · Linktree: <a href="https://linktr.ee/Chicboutique.23" target="_blank">Chicboutique.23</a></p>
+      <p>Chic Boutique © 2025 · Linktree:
+        <a href="https://linktr.ee/Chicboutique.23" target="_blank">Chicboutique.23</a>
+      </p>
     </footer>
   </div>
 
-  <script src="main.js"></script>
+  <!-- MODAL GALERÍA -->
+  <div id="modalBackdrop" class="modal-backdrop" onclick="closeModal()">
+    <div class="modal" onclick="event.stopPropagation()">
+      <div id="modalContent"></div>
+      <div style="text-align:right;margin-top:12px">
+        <button class="btn" onclick="closeModal()">Cerrar</button>
+      </div>
+    </div>
+  </div>
 
-</div>
-<script src='main.js'></script>
+  <!-- CARRITO GLOBAL -->
+  <div class="cart-toggle" onclick="toggleCart()">
+    🛒 Carrito
+    <span id="cart-count">0</span>
+  </div>
+
+  <div id="cart-panel" class="cart-panel">
+    <div class="cart-header">
+      <strong>Tu carrito</strong>
+      <button class="cart-item-remove" onclick="toggleCart()">×</button>
+    </div>
+    <div id="cart-items" class="cart-items"></div>
+    <div class="cart-footer">
+      <div><strong>Total:</strong> S/ <span id="cart-total">0.00</span></div>
+
+      <div class="cart-methods">
+        <div>Métodos de pago simulados:</div>
+        <ul>
+          <li>Yape / Plin</li>
+          <li>Transferencia bancaria (BCP, Interbank)</li>
+          <li>Tarjeta de crédito / débito</li>
+        </ul>
+      </div>
+
+      <button class="btn cart-checkout" onclick="checkout()">Continuar</button>
+      <p class="cart-note">
+        Este carrito es un ejemplo. Al continuar verás el resumen y un mensaje de confirmación
+        como si hubieras realizado tu pedido en Chic Boutique.
+      </p>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
 </body>
 </html>
